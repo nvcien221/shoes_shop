@@ -1,14 +1,14 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Outlet } from "react-router-dom";
+import Header from "./header";
+import Footer from "./footer";
 
 export function BaseTemplate() {
   return (
-    <div>
-      <header>Header</header>
-      <br />
+    <>
+      <Header />
       <Outlet />
-      <br />
-      <footer>footer</footer>
-    </div>
+      <Footer />
+    </>
   );
 }
