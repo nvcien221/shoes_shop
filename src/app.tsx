@@ -2,9 +2,16 @@
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 
+/** style global */
+import { GlobalStyle } from "./components/global-style";
+
 /** set-up redux */
 
 // App để config dự án
 export function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <GlobalStyle>
+      <RouterProvider router={router}></RouterProvider>
+    </GlobalStyle>
+  );
 }
