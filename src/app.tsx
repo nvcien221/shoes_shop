@@ -11,7 +11,7 @@ import { GlobalStyle } from "./components/global-style";
 export function App() {
   return (
     <GlobalStyle>
-      <RouterProvider router={router}></RouterProvider>
+      <RouterProvider router={router} />
     </GlobalStyle>
   );
 }
