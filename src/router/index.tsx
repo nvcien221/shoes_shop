@@ -11,7 +11,7 @@ const Profile = lazy(() => import("../pages/profile"));
 const Register = lazy(() => import("../pages/register"));
 const Search = lazy(() => import("../pages/search"));
 const Detail = lazy(() => import("../pages/detail"));
-
+const a = 10;
 export const router = createBrowserRouter([
   {
     element: <BaseTemplate />,
