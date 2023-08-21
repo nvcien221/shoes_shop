@@ -8,8 +8,17 @@ const productSlice = createSlice({
   name: "productSlice",
   initialState,
   reducers: {
-    setListProduct: (state, actiton) => {
-      //
+    // name + reducer: productSlice/setListProduct
+    setListProduct: (state, action) => {
+      // redux + immer: giúp chúng ta clone object, không cần quan tâm đến địa chỉ.
+      // không cần dùng return
+      state.listProduct = action.payload;
+
+      // Cách cũ. có return
+      // return {
+      //   ...state,
+      //   listProduct: action.payload,
+      // };
     },
   },
 });
