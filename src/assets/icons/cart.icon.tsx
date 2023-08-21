@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-function IconCart() {
+function Cart() {
   return (
     <svg
       width="24px"
@@ -28,4 +28,4 @@ function IconCart() {
   );
 }
 
-export default memo(IconCart);
+export const IconCart = memo(Cart);

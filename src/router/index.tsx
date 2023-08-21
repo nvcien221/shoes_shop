@@ -1,12 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import { BaseTemplate } from "../templates/base";
-import Home from "../pages/home";
-import Carts from "../pages/carts";
-import Login from "../pages/login";
-import Profile from "../pages/profile";
-import Register from "../pages/register";
-import Search from "../pages/search";
-import Detail from "../pages/detail";
+import { Suspense, lazy } from "react";
+
+import HomeSkeleton from "src/pages/home/home.skeleton";
+
+const Home = lazy(() => import("../pages/home"));
+const Carts = lazy(() => import("../pages/carts"));
+const Login = lazy(() => import("../pages/login"));
+const Profile = lazy(() => import("../pages/profile"));
+const Register = lazy(() => import("../pages/register"));
+const Search = lazy(() => import("../pages/search"));
+const Detail = lazy(() => import("../pages/detail"));
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +19,11 @@ export const router = createBrowserRouter([
       {
         index: true,
         path: "/",
-        element: <Home />,
+        element: (
+          <Suspense fallback={<HomeSkeleton />}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "carts",
@@ -23,7 +31,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login />,
+        element: (
+          <Suspense fallback={<>Skeleton Login</>}>
+            <Login />
+          </Suspense>
+        ),
       },
       {
         path: "profile",
