@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { getAllProduct } from "src/services/product.service";
 import HomeCarousel from "./home-carousel";
 import ProductFeature from "./product-feature";
+import { RootState, useAppSelector } from "src/redux/config-store";
 
 // useSelector: lấy store từ trên redux về
 // useDispatch: set lại state trên redux
 import { useSelector, useDispatch } from "react-redux";
 
 function Home() {
-  const listProduct = useSelector((state: any) => {
+  const listProduct = useAppSelector((state) => {
     // console.log(state);
     return state.productReducer.listProduct;
   });

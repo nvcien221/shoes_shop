@@ -1,7 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  listProduct: [],
+  listProduct: [
+    {
+        "id": 2,
+        "name": "Adidas Prophere Black White",
+        "alias": "adidas-prophere-black-white",
+        "feature": false,
+        "price": 450,
+        "description": "The adidas Primeknit upper wraps the foot with a supportive fit that enhances movement.\r\n\r\n",
+        "shortDescription": "The midsole contains 20% more Boost for an amplified Boost feeling.\r\n\r\n",
+        "image": "https://shop.cyberlearn.vn/images/adidas-prophere-black-white.png"
+    }
+  ],
 };
 
 const productSlice = createSlice({
@@ -10,8 +21,7 @@ const productSlice = createSlice({
   reducers: {
     // name + reducer: productSlice/setListProduct
     setListProduct: (state, action) => {
-      // redux + immer: giúp chúng ta clone object, không cần quan tâm đến địa chỉ.
-      // không cần dùng return
+
       state.listProduct = action.payload;
 
       // Cách cũ. có return
@@ -22,6 +32,7 @@ const productSlice = createSlice({
     },
   },
 });
+export const {setListProduct} = productSlice.actions;
 
 export default productSlice.reducer;
 
@@ -38,27 +49,4 @@ const __createSlice = () => {
   };
 };
 
-const number = 1;
 
-// cham hon, do ton tai nguyen
-switch (number) {
-  case 1: {
-    console.log("so mot");
-    break;
-  }
-  default:
-    console.log("....");
-}
-// nhanh hon, ton tai nguyen
-const obj = {
-  "1": () => {
-    console.log("so mot");
-  },
-  "2": () => {
-    console.log("so hai");
-  },
-};
-
-obj[1]();
-
-// mapper
